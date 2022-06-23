@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 16:12:07 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/06/13 18:47:30 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/06/17 15:27:19 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,17 @@ typedef struct s_philo
 	long long		time;
 	long long		last_meal;
 	int				meals_to_eat;
+	int				dead;
 	pthread_mutex_t	*forks;
 	pthread_mutex_t	*lock_msg;
 	
 }              t_philo;
+
+typedef struct s_watch
+{
+	int	death;
+}				t_watch;
+
 
 
 int	ft_atoi(char *str);

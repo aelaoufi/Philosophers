@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 16:12:11 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/06/23 23:59:54 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/06/24 17:29:03 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,11 @@ void	*routine(void *vars)
 	r = (var->id + 1) % var->numphilo;
 	while (1)
 	{
+		if ((gettime() - var[i].time) - var[i].last_meal >= var->time_to_die)
+		{
+			pthread_mutex_lock((var->routine));
+			return (0);
+		}
 		pthread_mutex_lock(&(var->forks[l]));
 		print_msg(var,"has taken the left fork");
 		pthread_mutex_lock(&(var->forks[r]));
@@ -91,13 +96,16 @@ void	create_philo(pthread_mutex_t *forks, t_philo *vars)
 	int			i;
 	long long	time;
 	pthread_mutex_t *lock;
+	pthread_mutex_t *routini;
 	
 	i = 0;
 	time = gettime();
 	lock = malloc(sizeof(pthread_mutex_t));
+	routini = malloc(sizeof(pthread_mutex_t));
 	pthread_mutex_init(lock, NULL);
 	while (i < vars->numphilo)
 	{
+		vars[i].routine = routini;
 		vars[i].time = time;
 		vars[i].lock_msg = lock;
 		vars[i].id = i;

@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 16:12:07 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/06/17 15:27:19 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/06/24 17:26:19 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_philo
 	int				dead;
 	pthread_mutex_t	*forks;
 	pthread_mutex_t	*lock_msg;
+	pthread_mutex_t	*routine;
 	
 }              t_philo;
 

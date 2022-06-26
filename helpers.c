@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 16:52:20 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/06/12 22:34:21 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/06/26 19:07:44 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int	ft_atoi(char *str)
 	ft_isdigit(str, res, sign);
 	return (res * sign);
 }
+
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	unsigned int	i;
@@ -68,4 +69,14 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	while (s1[i] && (unsigned char)s1[i] == (unsigned char)s2[i] && (i < n - 1))
 		i++;
 	return ((unsigned char )s1[i] - (unsigned char )s2[i]);
+}
+
+int	check_life(t_philo *vars, int i)
+{
+	if ((gettime() - vars[i].time) - vars[i].last_meal >= vars->time_to_die)
+	{
+		pthread_mutex_lock((vars->routine));
+		return (0);
+	}
+	return (1);
 }

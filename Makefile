@@ -1,6 +1,6 @@
 NAME = philo
 
-SRCS = philo.c helpers.c
+SRCS = philo.c helpers.c helpers2.c
 
 FLAGS = -Wall -Werror -Wextra
 

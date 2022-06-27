@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 16:12:07 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/06/26 19:08:19 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/06/27 19:58:16 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ typedef struct s_philo
 	long long		time;
 	long long		last_meal;
 	int				meals_to_eat;
-	int				dead;
 	pthread_mutex_t	*forks;
 	pthread_mutex_t	*lock_msg;
 	pthread_mutex_t	*routine;
@@ -51,5 +50,6 @@ long long		gettime(void);
 void			ft_usleep(int k);
 int				check_death(t_philo *vars, int i);
 int				check_life(t_philo *vars, int i);
+int				check_args(int ac, char **av);
 
 #endif

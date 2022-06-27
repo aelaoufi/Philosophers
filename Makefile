@@ -2,14 +2,14 @@ NAME = philo
 
 SRCS = philo.c helpers.c helpers2.c
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra 
 
 OBJ := $(SRCS:.c=.o)
 
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	cc -g -pthread -o $(NAME) $(FLAGS) $(OBJ)
+	cc -g -pthread -o $(NAME) $(FLAGS) $(OBJ) -fsanitize=thread
 
 clean : 
 	rm -rf $(OBJ)

@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 16:12:11 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/06/26 19:07:49 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/06/27 20:18:14 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	initialize(t_philo *vars, char **av)
 			vars[i].meals_to_eat = ft_atoi(av[5]);
 		else
 			vars[i].meals_to_eat = -1;
+		vars[i].ate = 0;
 		vars[i].last_meal = 0;
 		vars[i].numphilo = ft_atoi(av[1]);
 		vars[i].time_to_die = ft_atoi(av[2]);
@@ -101,6 +102,8 @@ int	main(int ac, char **av)
 	int				numphilo;
 	int				i;
 
+	if (check_args(ac, av) == -1)
+		return (0);
 	numphilo = ft_atoi(av[1]);
 	vars = malloc(sizeof(t_philo) * numphilo);
 	initialize(vars, av);

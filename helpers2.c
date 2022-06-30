@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   routine.c                                          :+:      :+:    :+:   */
+/*   helpers2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 18:28:01 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/06/26 19:06:55 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/06/30 23:37:32 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,11 @@ pthread_mutex_t	*foks(int num)
 
 int	number_of_meals(t_philo	*vars)
 {
-	int	i;
 	int	num;
+	int	i;
 
-	i = 0;
 	num = 0;
+	i = 0;
 	while (i < vars->numphilo)
 	{
 		if (vars[i].ate < vars[i].meals_to_eat)

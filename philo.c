@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 16:12:11 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/06/27 20:18:14 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/06/30 23:37:36 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,8 +99,8 @@ int	main(int ac, char **av)
 {
 	pthread_mutex_t	*forks;
 	t_philo			*vars;
-	int				numphilo;
 	int				i;
+	int				numphilo;
 
 	if (check_args(ac, av) == -1)
 		return (0);

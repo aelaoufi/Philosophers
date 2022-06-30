@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 16:12:07 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/06/27 19:58:16 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/06/30 23:37:21 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@
 typedef struct s_philo
 {
 	pthread_t		th;
-	int				id;
 	int				ate;
+	int				id;
 	int				numphilo;
 	int				time_to_die;
 	int				time_to_eat;

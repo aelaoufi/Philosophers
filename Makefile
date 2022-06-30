@@ -9,8 +9,7 @@ OBJ := $(SRCS:.c=.o)
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	cc -g -pthread -o $(NAME) $(FLAGS) $(OBJ) -fsanitize=thread
-
+	cc -g -pthread -o $(NAME) $(FLAGS) $(OBJ)
 clean : 
 	rm -rf $(OBJ)
 

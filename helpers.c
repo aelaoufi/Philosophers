@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 16:52:20 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/06/27 20:02:32 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/06/30 23:36:50 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	check_args(int ac, char **av)
 	{
 		if (ft_atoi(av[i]) == -1 || ft_atoi(av[i]) == 0)
 		{
-			printf("Please enter the right arguments");
+			printf("Enter the right arguments");
 			return (-1);
 		}
 		i++;
